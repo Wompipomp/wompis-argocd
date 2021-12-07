@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wompi-app
+spec:
+  selector:
+    matchLabels:
+      app: wompi-app
+  template:
+    metadata:
+      labels:
+        app: wompi-app
+    spec:
+      containers:
+      - name: wompi-app
+        image: hello-world
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
